@@ -60,6 +60,12 @@ const azapiResourceAction = `{
         "description_kind": "plain",
         "required": true,
         "type": "string"
+      },
+      "when": {
+        "description": "When to perform the action, value must be one of: 'apply', 'destroy'. Default is 'apply'.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
       }
     },
     "block_types": {
