@@ -70,6 +70,7 @@ const azapiResource = `{
         "type": "string"
       },
       "removing_special_chars": {
+        "deprecated": true,
         "description_kind": "plain",
         "optional": true,
         "type": "bool"
