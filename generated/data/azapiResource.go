@@ -12,8 +12,39 @@ const azapiResource = `{
       "id": {
         "computed": true,
         "description_kind": "plain",
-        "optional": true,
         "type": "string"
+      },
+      "identity": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "identity_ids": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": [
+                "list",
+                "string"
+              ]
+            },
+            "principal_id": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "tenant_id": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "type": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        }
       },
       "location": {
         "computed": true,
@@ -21,6 +52,7 @@ const azapiResource = `{
         "type": "string"
       },
       "name": {
+        "computed": true,
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -28,7 +60,7 @@ const azapiResource = `{
       "output": {
         "computed": true,
         "description_kind": "plain",
-        "type": "string"
+        "type": "dynamic"
       },
       "parent_id": {
         "computed": true,
@@ -37,6 +69,7 @@ const azapiResource = `{
         "type": "string"
       },
       "resource_id": {
+        "computed": true,
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -64,42 +97,11 @@ const azapiResource = `{
       }
     },
     "block_types": {
-      "identity": {
-        "block": {
-          "attributes": {
-            "identity_ids": {
-              "computed": true,
-              "description_kind": "plain",
-              "type": [
-                "list",
-                "string"
-              ]
-            },
-            "principal_id": {
-              "computed": true,
-              "description_kind": "plain",
-              "type": "string"
-            },
-            "tenant_id": {
-              "computed": true,
-              "description_kind": "plain",
-              "type": "string"
-            },
-            "type": {
-              "computed": true,
-              "description_kind": "plain",
-              "type": "string"
-            }
-          },
-          "description_kind": "plain"
-        },
-        "max_items": 1,
-        "nesting_mode": "list"
-      },
       "timeouts": {
         "block": {
           "attributes": {
             "read": {
+              "description": "A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as \"30s\" or \"2h45m\". Valid time units are \"s\" (seconds), \"m\" (minutes), \"h\" (hours). Read operations occur during any refresh or planning operation when refresh is enabled.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"

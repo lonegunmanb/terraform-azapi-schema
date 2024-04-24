@@ -15,14 +15,14 @@ const azapiResourceAction = `{
         "type": "string"
       },
       "body": {
+        "computed": true,
         "description_kind": "plain",
         "optional": true,
-        "type": "string"
+        "type": "dynamic"
       },
       "id": {
         "computed": true,
         "description_kind": "plain",
-        "optional": true,
         "type": "string"
       },
       "locks": {
@@ -34,6 +34,7 @@ const azapiResourceAction = `{
         ]
       },
       "method": {
+        "computed": true,
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -41,7 +42,7 @@ const azapiResourceAction = `{
       "output": {
         "computed": true,
         "description_kind": "plain",
-        "type": "string"
+        "type": "dynamic"
       },
       "resource_id": {
         "description_kind": "plain",
@@ -62,7 +63,7 @@ const azapiResourceAction = `{
         "type": "string"
       },
       "when": {
-        "description": "When to perform the action, value must be one of: 'apply', 'destroy'. Default is 'apply'.",
+        "computed": true,
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -73,21 +74,19 @@ const azapiResourceAction = `{
         "block": {
           "attributes": {
             "create": {
+              "description": "A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as \"30s\" or \"2h45m\". Valid time units are \"s\" (seconds), \"m\" (minutes), \"h\" (hours).",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
             },
             "delete": {
+              "description": "A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as \"30s\" or \"2h45m\". Valid time units are \"s\" (seconds), \"m\" (minutes), \"h\" (hours). Setting a timeout for a Delete operation is only applicable if changes are saved into state before the destroy operation occurs.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
             },
             "read": {
-              "description_kind": "plain",
-              "optional": true,
-              "type": "string"
-            },
-            "update": {
+              "description": "A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as \"30s\" or \"2h45m\". Valid time units are \"s\" (seconds), \"m\" (minutes), \"h\" (hours). Read operations occur during any refresh or planning operation when refresh is enabled.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
@@ -100,7 +99,7 @@ const azapiResourceAction = `{
     },
     "description_kind": "plain"
   },
-  "version": 0
+  "version": 1
 }`
 
 func AzapiResourceActionSchema() *tfjson.Schema {

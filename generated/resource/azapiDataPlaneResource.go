@@ -10,22 +10,24 @@ const azapiDataPlaneResource = `{
   "block": {
     "attributes": {
       "body": {
+        "computed": true,
         "description_kind": "plain",
         "optional": true,
-        "type": "string"
+        "type": "dynamic"
       },
       "id": {
         "computed": true,
         "description_kind": "plain",
-        "optional": true,
         "type": "string"
       },
       "ignore_casing": {
+        "computed": true,
         "description_kind": "plain",
         "optional": true,
         "type": "bool"
       },
       "ignore_missing_property": {
+        "computed": true,
         "description_kind": "plain",
         "optional": true,
         "type": "bool"
@@ -46,7 +48,7 @@ const azapiDataPlaneResource = `{
       "output": {
         "computed": true,
         "description_kind": "plain",
-        "type": "string"
+        "type": "dynamic"
       },
       "parent_id": {
         "description_kind": "plain",
@@ -72,21 +74,19 @@ const azapiDataPlaneResource = `{
         "block": {
           "attributes": {
             "create": {
+              "description": "A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as \"30s\" or \"2h45m\". Valid time units are \"s\" (seconds), \"m\" (minutes), \"h\" (hours).",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
             },
             "delete": {
+              "description": "A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as \"30s\" or \"2h45m\". Valid time units are \"s\" (seconds), \"m\" (minutes), \"h\" (hours). Setting a timeout for a Delete operation is only applicable if changes are saved into state before the destroy operation occurs.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
             },
             "read": {
-              "description_kind": "plain",
-              "optional": true,
-              "type": "string"
-            },
-            "update": {
+              "description": "A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as \"30s\" or \"2h45m\". Valid time units are \"s\" (seconds), \"m\" (minutes), \"h\" (hours). Read operations occur during any refresh or planning operation when refresh is enabled.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
@@ -99,7 +99,7 @@ const azapiDataPlaneResource = `{
     },
     "description_kind": "plain"
   },
-  "version": 0
+  "version": 1
 }`
 
 func AzapiDataPlaneResourceSchema() *tfjson.Schema {

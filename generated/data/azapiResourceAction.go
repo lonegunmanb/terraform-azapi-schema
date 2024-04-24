@@ -17,15 +17,15 @@ const azapiResourceAction = `{
       "body": {
         "description_kind": "plain",
         "optional": true,
-        "type": "string"
+        "type": "dynamic"
       },
       "id": {
         "computed": true,
         "description_kind": "plain",
-        "optional": true,
         "type": "string"
       },
       "method": {
+        "computed": true,
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -33,7 +33,7 @@ const azapiResourceAction = `{
       "output": {
         "computed": true,
         "description_kind": "plain",
-        "type": "string"
+        "type": "dynamic"
       },
       "resource_id": {
         "description_kind": "plain",
@@ -59,6 +59,7 @@ const azapiResourceAction = `{
         "block": {
           "attributes": {
             "read": {
+              "description": "A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as \"30s\" or \"2h45m\". Valid time units are \"s\" (seconds), \"m\" (minutes), \"h\" (hours). Read operations occur during any refresh or planning operation when refresh is enabled.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"

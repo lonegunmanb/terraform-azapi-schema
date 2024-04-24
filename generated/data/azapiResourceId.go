@@ -12,7 +12,6 @@ const azapiResourceId = `{
       "id": {
         "computed": true,
         "description_kind": "plain",
-        "optional": true,
         "type": "string"
       },
       "name": {
@@ -67,6 +66,7 @@ const azapiResourceId = `{
         "block": {
           "attributes": {
             "read": {
+              "description": "A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as \"30s\" or \"2h45m\". Valid time units are \"s\" (seconds), \"m\" (minutes), \"h\" (hours). Read operations occur during any refresh or planning operation when refresh is enabled.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
