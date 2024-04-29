@@ -15,7 +15,6 @@ const azapiResourceAction = `{
         "type": "string"
       },
       "body": {
-        "computed": true,
         "description_kind": "plain",
         "optional": true,
         "type": "dynamic"
