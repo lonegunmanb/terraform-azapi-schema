@@ -16,6 +16,7 @@ func init() {
 	resources["azapi_resource"] = resource.AzapiResourceSchema()  
 	resources["azapi_resource_action"] = resource.AzapiResourceActionSchema()  
 	resources["azapi_update_resource"] = resource.AzapiUpdateResourceSchema()  
+	dataSources["azapi_client_config"] = data.AzapiClientConfigSchema()  
 	dataSources["azapi_resource"] = data.AzapiResourceSchema()  
 	dataSources["azapi_resource_action"] = data.AzapiResourceActionSchema()  
 	dataSources["azapi_resource_id"] = data.AzapiResourceIdSchema()  
