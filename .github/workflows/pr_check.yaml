@@ -41,7 +41,7 @@ jobs:
     - name: Run tests for generated package
       run: go test github.com/${{ github.repository }}/generated/...
     - name: Run Gosec Security Scanner
-      uses: securego/gosec@a89e9d5a7acb4457f3891ac18532b142b1bf9221 # v2.17.0
+      uses: securego/gosec@d4617f51baf75f4f809066386a4f9d27b3ac3e46 #2.21.4
       with:
         args: '-exclude=G101 ./...'
     - name: Run GolangCI-Lint
