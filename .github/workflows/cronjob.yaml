@@ -34,7 +34,7 @@ jobs:
         export VERSION=$(go run cmd/main.go -refresh)
         export GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
         go mod tidy
-        go test github.com/${{ github.repository }}/generated/...
+        go test github.com/${{ github.repository }}/v2/generated/...
         echo "VERSION=$VERSION" >> $GITHUB_ENV
     - name: git commit
       run: |

@@ -4,16 +4,18 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"github.com/iancoleman/strcase"
 	"go/format"
 	"strings"
 	"text/template"
+
+	"github.com/iancoleman/strcase"
 )
 
 type Package string
 
 const PackageResource = "resource"
 const PackageData = "data"
+const PackageEphemeral = "ephemeral"
 
 const funcTemplate = `package {{ .Package }}  
   
@@ -38,7 +40,7 @@ import (
 	"testing"
 
 	tfjson "github.com/hashicorp/terraform-json"
-	"github.com/{{ .RepoOwner }}/{{ .GoModule }}/generated/{{ .Package }}"
+	"github.com/{{ .RepoOwner }}/{{ .GoModule }}/v2/generated/{{ .Package }}"
 	"github.com/stretchr/testify/assert"
 )
 

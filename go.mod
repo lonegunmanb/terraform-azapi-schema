@@ -1,4 +1,4 @@
-module github.com/lonegunmanb/terraform-azapi-schema
+module github.com/lonegunmanb/terraform-azapi-schema/v2
 
 go 1.23.0
 

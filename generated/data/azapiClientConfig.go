@@ -14,14 +14,28 @@ const azapiClientConfig = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "object_id": {
+        "computed": true,
+        "description": "The object ID of the identity. E.g. ` + "`" + `00000000-0000-0000-0000-000000000000` + "`" + `",
+        "description_kind": "markdown",
+        "type": "string"
+      },
       "subscription_id": {
         "computed": true,
-        "description_kind": "plain",
+        "description": "The subscription ID. E.g. ` + "`" + `00000000-0000-0000-0000-000000000000` + "`" + `",
+        "description_kind": "markdown",
+        "type": "string"
+      },
+      "subscription_resource_id": {
+        "computed": true,
+        "description": "The resource ID of the subscription. E.g. ` + "`" + `/subscriptions/00000000-0000-0000-0000-000000000000` + "`" + `",
+        "description_kind": "markdown",
         "type": "string"
       },
       "tenant_id": {
         "computed": true,
-        "description_kind": "plain",
+        "description": "The tenant ID. E.g. ` + "`" + `00000000-0000-0000-0000-000000000000` + "`" + `",
+        "description_kind": "markdown",
         "type": "string"
       }
     },

@@ -1,16 +1,16 @@
-package data_test
+package ephemeral_test
 
 import (
 	"testing"
 
 	tfjson "github.com/hashicorp/terraform-json"
-	"github.com/lonegunmanb/terraform-azapi-schema/v2/generated/data"
+	"github.com/lonegunmanb/terraform-azapi-schema/v2/generated/ephemeral"
 	"github.com/stretchr/testify/assert"
 )
 
 func TestAzapiResourceActionSchema(t *testing.T) {
 	defaultSchema := &tfjson.Schema{}
-	s := data.AzapiResourceActionSchema()
+	s := ephemeral.AzapiResourceActionSchema()
 	assert.NotNil(t, s)
 	assert.NotEqual(t, defaultSchema, s)
 }
