@@ -55,7 +55,8 @@ const azapiClientConfig = `{
         "nesting_mode": "single"
       }
     },
-    "description_kind": "plain"
+    "description": "This data source provides information about the current Azure client configuration, including the tenant ID, subscription ID, and object ID of the identity used by the provider.",
+    "description_kind": "markdown"
   },
   "version": 0
 }`

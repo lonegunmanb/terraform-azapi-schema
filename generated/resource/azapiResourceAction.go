@@ -190,7 +190,8 @@ const azapiResourceAction = `{
         "nesting_mode": "single"
       }
     },
-    "description_kind": "plain"
+    "description": "This resource allows you to perform an action on an existing Azure resource. It is useful for performing actions that modify the state of an Azure resource without managing its lifecycle in Terraform, e.g., starting or stopping an Azure Virtual Machine.\tPlease note that when deleting this resource, no action will be performed on the Azure resource unless the ` + "`" + `when` + "`" + ` argument is set to ` + "`" + `destroy` + "`" + `. ",
+    "description_kind": "markdown"
   },
   "version": 2
 }`

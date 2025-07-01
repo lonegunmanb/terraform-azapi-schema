@@ -152,6 +152,15 @@ const azapiUpdateResource = `{
         "type": "dynamic",
         "write_only": true
       },
+      "sensitive_body_version": {
+        "description": "A map where the key is the path to the property in ` + "`" + `sensitive_body` + "`" + ` and the value is the version of the property. The key is a string in the format of ` + "`" + `path.to.property[index].subproperty` + "`" + `, where ` + "`" + `index` + "`" + ` is the index of the item in an array. When the version is changed, the property will be included in the request body, otherwise it will be omitted from the request body. ",
+        "description_kind": "markdown",
+        "optional": true,
+        "type": [
+          "map",
+          "string"
+        ]
+      },
       "type": {
         "description": "In a format like ` + "`" + `\u003cresource-type\u003e@\u003capi-version\u003e` + "`" + `. ` + "`" + `\u003cresource-type\u003e` + "`" + ` is the Azure resource type, for example, ` + "`" + `Microsoft.Storage/storageAccounts` + "`" + `. ` + "`" + `\u003capi-version\u003e` + "`" + ` is version of the API used to manage this azure resource.",
         "description_kind": "markdown",

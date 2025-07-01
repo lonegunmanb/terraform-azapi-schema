@@ -124,7 +124,8 @@ const azapiResourceList = `{
         "nesting_mode": "single"
       }
     },
-    "description_kind": "plain"
+    "description": "This data source allows you to list resources of a specific type under a given scope (e.g., subscription, resource group).",
+    "description_kind": "markdown"
   },
   "version": 0
 }`

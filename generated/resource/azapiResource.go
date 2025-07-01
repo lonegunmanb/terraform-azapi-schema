@@ -78,6 +78,13 @@ const azapiResource = `{
         "optional": true,
         "type": "bool"
       },
+      "ignore_null_property": {
+        "computed": true,
+        "description": "When set to ` + "`" + `true` + "`" + `, the provider will ignore properties whose values are ` + "`" + `null` + "`" + ` in the ` + "`" + `body` + "`" + `.\nThese properties will not be included in the request body sent to the API, and the difference will not be shown in the plan output. Defaults to ` + "`" + `false` + "`" + `.",
+        "description_kind": "markdown",
+        "optional": true,
+        "type": "bool"
+      },
       "location": {
         "computed": true,
         "description": "The location of the Azure resource.",
@@ -216,6 +223,15 @@ const azapiResource = `{
         "optional": true,
         "type": "dynamic",
         "write_only": true
+      },
+      "sensitive_body_version": {
+        "description": "A map where the key is the path to the property in ` + "`" + `sensitive_body` + "`" + ` and the value is the version of the property. The key is a string in the format of ` + "`" + `path.to.property[index].subproperty` + "`" + `, where ` + "`" + `index` + "`" + ` is the index of the item in an array. When the version is changed, the property will be included in the request body, otherwise it will be omitted from the request body. ",
+        "description_kind": "markdown",
+        "optional": true,
+        "type": [
+          "map",
+          "string"
+        ]
       },
       "tags": {
         "computed": true,

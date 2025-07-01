@@ -86,7 +86,8 @@ const azapiResourceId = `{
         "nesting_mode": "single"
       }
     },
-    "description_kind": "plain"
+    "description": "This data source allows you to parse an Azure Resource ID into its components. It can be used to extract information such as the resource type, name, parent ID, and other parts of the resource ID. It can also be used to build a resource ID from the resource type, name, and parent ID. This is useful for constructing resource IDs for use in other resources or data sources.",
+    "description_kind": "markdown"
   },
   "version": 0
 }`
