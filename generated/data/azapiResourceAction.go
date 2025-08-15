@@ -102,6 +102,7 @@ const azapiResourceAction = `{
             },
             "multiplier": {
               "computed": true,
+              "deprecated": true,
               "description": "The multiplier to apply to the interval between retries. Default is ` + "`" + `1.5` + "`" + `.",
               "description_kind": "markdown",
               "optional": true,
@@ -109,6 +110,7 @@ const azapiResourceAction = `{
             },
             "randomization_factor": {
               "computed": true,
+              "deprecated": true,
               "description": "The randomization factor to apply to the interval between retries. The formula for the randomized interval is: ` + "`" + `RetryInterval * (random value in range [1 - RandomizationFactor, 1 + RandomizationFactor])` + "`" + `. Therefore set to zero ` + "`" + `0.0` + "`" + ` for no randomization. Default is ` + "`" + `0.5` + "`" + `.",
               "description_kind": "markdown",
               "optional": true,
