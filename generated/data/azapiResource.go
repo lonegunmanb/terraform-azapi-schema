@@ -9,6 +9,12 @@ import (
 const azapiResource = `{
   "block": {
     "attributes": {
+      "exists": {
+        "computed": true,
+        "description": "Indicates whether the specified Azure resource exists. This will be ` + "`" + `false` + "`" + ` only when ` + "`" + `ignore_not_found` + "`" + ` is ` + "`" + `true` + "`" + ` and the resource isn't found.",
+        "description_kind": "markdown",
+        "type": "bool"
+      },
       "headers": {
         "description": "A map of headers to include in the request",
         "description_kind": "markdown",
@@ -59,6 +65,12 @@ const azapiResource = `{
           },
           "nesting_mode": "list"
         }
+      },
+      "ignore_not_found": {
+        "description": "If set to ` + "`" + `true` + "`" + `, the data source will not fail when the specified resource is not found (HTTP 404). Identifier attributes (` + "`" + `id` + "`" + `, ` + "`" + `name` + "`" + `, ` + "`" + `parent_id` + "`" + `, ` + "`" + `resource_id` + "`" + `) will still be populated based on inputs; other computed attributes (` + "`" + `output` + "`" + `, ` + "`" + `location` + "`" + `, ` + "`" + `identity` + "`" + `, ` + "`" + `tags` + "`" + `) will be null/empty. Defaults to ` + "`" + `false` + "`" + `.",
+        "description_kind": "markdown",
+        "optional": true,
+        "type": "bool"
       },
       "location": {
         "computed": true,
